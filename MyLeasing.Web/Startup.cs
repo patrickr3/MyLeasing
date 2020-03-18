@@ -7,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using MyLeasing.Web.Data;
 using MyLeasing.Web.Data.Entities;
+using MyLeasing.Web.Helpers;
 using MyLeasing.Web.Helpers.Classes;
 using MyLeasing.Web.Helpers.Interfaces;
 
@@ -42,6 +43,9 @@ namespace MyLeasing.Web
                 );
             services.AddTransient<SeedDb>();
             services.AddScoped<IUserHelper, UserHelper>();
+            services.AddScoped<ICombosHelper, CombosHelper>();
+            services.AddScoped<IConverterHelper, ConverterHelper>();
+            services.AddScoped<IImageHelper, ImageHelper>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
